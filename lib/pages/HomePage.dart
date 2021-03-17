@@ -14,22 +14,22 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Color bgColor = Colors.white;
-
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          bgColor = ([...Colors.primaries]..shuffle()).first;
-        });
-      },
-      child: Scaffold(
-        backgroundColor: bgColor,
-        appBar: AppBar(
-          title: Text(widget.title),
-          centerTitle: true,
-        ),
-        body: _buildChild('Hey there'),
+    return Scaffold(
+      backgroundColor: bgColor,
+      appBar: AppBar(
+        title: Text(widget.title),
+        centerTitle: true,
+      ),
+      body: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: () {
+          setState(() {
+            bgColor = ([...Colors.primaries]..shuffle()).first;
+          });
+        },
+        child: _buildChild('Hey there'),
       ),
     );
   }
