@@ -22,13 +22,17 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+        ),
         centerTitle: true,
       ),
       body: GestureDetector(
         behavior: HitTestBehavior.translucent,
         onTap: () => _changeColor(),
-        child: _buildContent('Hey there'),
+        child: _buildContent(
+          'Hey there',
+        ),
       ),
     );
   }
@@ -40,7 +44,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Color _randomColor() {
-    return Color(Random().nextInt(0xFFFFFF));
+    return Color(
+      Random().nextInt(0xFFFFFF),
+    );
   }
 
   Widget _buildContent(String text) {
@@ -55,7 +61,7 @@ class _HomePageState extends State<HomePage> {
               offset: Offset(1, 1),
               blurRadius: 1,
               color: Colors.black,
-            )
+            ),
           ],
         ),
       ),
